@@ -12,6 +12,7 @@ import Button from "../Button/Button";
 import WeatherWidget from "../WeatherWidget/WeatherWidget";
 import Modal from "../Modal/Modal";
 import HourlyWeather from "../HourlyWeather/HourlyWeather";
+import MapComponent from "../MapComponent/MapComponent";
 
 export default function Card({ user, disableBtn, localStorageFunc }) {
   const coord = user.location.coordinates;
@@ -128,6 +129,13 @@ export default function Card({ user, disableBtn, localStorageFunc }) {
                         <HourlyWeather
                           hourly={weather.hourly}
                           current_time={weather.current_weather.time}
+                        />
+                      </div>
+                      <div className="mb-10">
+                        <MapComponent
+                          lat={coord.latitude}
+                          lon={coord.longitude}
+                          urlImg={user.picture.medium}
                         />
                       </div>
                       <Button onClick={() => setModal(false)}>Close</Button>

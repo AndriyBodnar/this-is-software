@@ -14,7 +14,7 @@ const Modal = ({ children, visible, setVisible }) => {
       onClick={() => setVisible(false)}
     >
       <div
-        className="p-6 bg-white mx-6   min-w-[250px] rounded-2xl  "
+        className="p-6 bg-white mx-6   min-w-[350px] rounded-2xl  "
         onClick={(e) => e.stopPropagation()}
       >
         {children}
