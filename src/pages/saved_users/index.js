@@ -1,4 +1,5 @@
 import Card from "@/components/Card/Card";
+import NotFound from "@/components/NotFound/NotFound";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
@@ -26,12 +27,15 @@ export default function SavedUsers() {
           <Link href="/">Main page</Link>
         </button>
       </div>
-
-      <div className="flex flex-wrap -mx-1 lg:-mx-4 ">
-        {users.map((user, i) => (
-          <Card user={user} key={i} disableBtn />
-        ))}
-      </div>
+      {!!users.length ? (
+        <div className="flex flex-wrap -mx-1 lg:-mx-4 ">
+          {users.map((user, i) => (
+            <Card user={user} key={i} disableBtn />
+          ))}
+        </div>
+      ) : (
+        <NotFound />
+      )}
     </main>
   );
 }

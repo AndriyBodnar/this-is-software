@@ -16,7 +16,7 @@ export default function HourlyWeather({ hourly, current_time }) {
       temp.push(hourly.temperature_2m[i]);
       time.push(hourly.time[i].slice(11, 16));
     }
-    console.log(temp, time);
+
     return temp;
   }
 
